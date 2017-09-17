@@ -27,7 +27,7 @@ sdl_module::sdl_module(std::string title, int dpi_unscaled_width, int dpi_unscal
 
     Uint32 flags = SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI;
 
-    if ((m_window = SDL_CreateWindow(title.c_str(), m_x, m_y, m_dpi_scaled_width, m_dpi_scaled_height, flags)) == nullptr) {
+    if ((m_window = SDL_CreateWindow(m_title.c_str(), m_x, m_y, m_dpi_scaled_width, m_dpi_scaled_height, flags)) == nullptr) {
         throw sdl_module_exception(std::string(SDL_GetError()));
     }
 
